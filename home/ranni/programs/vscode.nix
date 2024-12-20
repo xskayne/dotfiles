@@ -6,7 +6,7 @@
 
     extensions = (with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
-      catppuccin.catppuccin-vsc
+      github.github-vscode-theme
       wix.vscode-import-cost
       bierner.emojisense
       esbenp.prettier-vscode
@@ -18,7 +18,7 @@
     userSettings = {
       # Workbench
       "workbench.activityBar.location" = "hidden";
-      "workbench.colorTheme" = "Catppuccin Mocha";
+      "workbench.colorTheme" = "GitHub Dark";
       "workbench.editor.showTabs" = "single";
       "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.layoutControl.enabled" = false;
