@@ -99,6 +99,7 @@
     nixpkgs-fmt
     tree
     nextcloud-client
+    nemo
   ];
 
   hardware.pulseaudio.enable = false;
