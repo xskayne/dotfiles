@@ -136,7 +136,7 @@
       jack.enable = true;
     };
 
-    displayManager = {
+    xserver.displayManager = {
       gdm = {
         enable = true;
         wayland = true;
