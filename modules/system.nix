@@ -136,16 +136,10 @@
       jack.enable = true;
     };
 
-    desktopManager = {
-      plasma6 = {
-        enable = true;
-      };
-    };
-
     displayManager = {
-      sddm = {
+      gdm = {
         enable = true;
-        wayland.enable = true;
+        wayland = true;
       };
     };
   };
