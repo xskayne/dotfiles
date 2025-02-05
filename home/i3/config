@@ -1,0 +1,181 @@
+#######################
+# config starts here: #
+#######################
+
+font pango: Noto Sans Regular 14
+
+# set the mod key to the winkey:
+set $mod Mod4
+
+#####################
+# workspace layout: #
+#####################
+
+# default i3 tiling mode:
+workspace_layout default
+
+##############################
+# extra options for windows: #
+##############################
+
+# border indicator on windows:
+new_window pixel 0
+
+# remove border from window(s)
+default_border pixel 0
+
+# set inner/outer gaps
+gaps inner 15
+gaps outer 5
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# switch/iterate between workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+##########################################
+# configuration for workspace behaviour: #
+##########################################
+
+# define names for default workspaces for which we configure key bindings later on.
+# we use variables to avoid repeating the names in multiple places.
+set $ws1 ""
+set $ws2 ""
+set $ws3 "󰨞"
+set $ws4 ""
+set $ws5 ""
+set $ws6 "󰊴"
+set $ws7 ""
+set $ws8 "8"
+set $ws9 ""
+set $ws10 ""
+
+# switch to workspace
+bindsym $mod+1    workspace  $ws1
+bindsym $mod+2    workspace  $ws2
+bindsym $mod+3    workspace  $ws3
+bindsym $mod+4    workspace  $ws4
+bindsym $mod+5    workspace  $ws5
+bindsym $mod+6    workspace  $ws6
+bindsym $mod+7    workspace  $ws7
+bindsym $mod+8    workspace  $ws8
+bindsym $mod+9    workspace  $ws9
+bindsym $mod+0    workspace  $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1    move container to workspace  $ws1
+bindsym $mod+Shift+2    move container to workspace  $ws2
+bindsym $mod+Shift+3    move container to workspace  $ws3
+bindsym $mod+Shift+4    move container to workspace  $ws4
+bindsym $mod+Shift+5    move container to workspace  $ws5
+bindsym $mod+Shift+6    move container to workspace  $ws6
+bindsym $mod+Shift+7    move container to workspace  $ws7
+bindsym $mod+Shift+8    move container to workspace  $ws8
+bindsym $mod+Shift+9    move container to workspace  $ws9
+bindsym $mod+Shift+0    move container to workspace  $ws10
+
+bindsym $mod+r mode "resize"
+
+######################################
+# keybindings for different actions: #
+######################################
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# take a screenshot
+bindsym Print exec scrot -F ~/Pictures/screenshot-%b%d::%H-%M-%S.png
+
+# take a snippet
+bindsym $mod+Shift+S exec scrot -s -f -F ~/Pictures/snippet-%b%d::%H-%M-%S.png
+
+# kill focused window
+bindsym $mod+q kill
+
+# lock screen with an image
+bindsym $mod+l exec i3lock -i ~/.config/i3/wallpaper/cottages-river.png -p default|win -t
+
+# restart i3 inplace (preserves your layout/session, can be used to update i3)
+bindsym $mod+Shift+r restart
+
+# volume
+bindsym XF86AudioMute exec amixer sset 'Master' toggle
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# backlight control
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# bind program to workspace and focus to them on startup:
+assign [class="Alacritty"] $ws1
+assign [class="(?i)chromium-browser"] $ws2
+assign [class="(?i)code"] $ws3
+assign [class="vesktop"] $ws4
+assign [class="net-runelite-client-RuneLite"] $ws6
+assign [class="vlc"] $ws9
+assign [class="mpv"] $ws9
+
+# automatic set focus new window if it opens on another workspace than the current:
+for_window [class=Alacritty] focus
+for_window [class=(?i)chromium-browser] focus
+for_window [class=(?i)code] focus
+for_window [class=net-runelite-client-RuneLite] focus
+for_window [class=mpv] focus
+
+
+#############################################
+# autostart applications/services on login: #
+#############################################
+
+# dex execute .desktop files + apps using /etc/xdg/autostart.
+exec --no-startup-id dex --autostart --environment i3
+
+# set random wallpaper
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper/anime/Cityscape.jpg
+
+# autotiling script
+exec_always pkill polybar
+exec_always --no-startup-id sleep 0.1 && polybar
+
+# autotiling script
+exec_always --no-startup-id autotiling
+
+##################
+# floating rules #
+##################
+
+# set size of floating window
+for_window [class=".*"] resize set 640 480
+
+# set position of floating window
+for_window [class=".*"] move position center
+
+#####################################
+# Application menu handled by rofi: #
+#####################################
+
+bindsym $mod+space exec rofi -modi drun -show drun
