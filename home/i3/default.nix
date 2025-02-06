@@ -19,7 +19,7 @@
   # set xresources properties for font and cursor size
   xresources.properties = {
     "Xft.dpi" = 110; # set font DPI to 110
-    "Xcursor.size" = 16; # set cursor size to 16
+    "Xcursor.size" = 24; # set cursor size to 16
   };
 
   xsession.windowManager.i3 = {

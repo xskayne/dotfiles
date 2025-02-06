@@ -15,9 +15,19 @@
   catppuccin.enable = true;
 
   # set the flavor of the catppuccin theme (mocha in this case)
-  catppuccin.flavor = "latte";
+  catppuccin.flavor = "mocha";
 
   home = {
+    # set cursor to mocha (light)
+    pointerCursor = {
+      x11.enable = true;
+      gtk.enable = true;
+
+      name = "catppuccin-mocha-light-cursors";
+      package = pkgs.catppuccin-cursors.mochaLight;
+      size = 24;
+    };
+
     # define packages to be installed for the user
     packages = with pkgs; [
       nixfmt-rfc-style # nixfmt tool for formatting nix files according to RFC style
@@ -31,6 +41,16 @@
       kmymoney # KMyMoney (personal finance manager)
       nextcloud-client # Nextcloud client for syncing files and data
     ];
+  };
+
+  gtk = {
+    enable = true;
+
+    cursorTheme = {
+      name = "catppuccin-mocha-light-cursors";
+      package = pkgs.catppuccin-cursors.mochaLight;
+      size = 24;
+    };
   };
 
   programs.git = {
