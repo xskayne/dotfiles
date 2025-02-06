@@ -41,6 +41,12 @@ Nix allows for an easy to manage, collaborative, reproducible deployment. This m
 | **Text Editor**             | [Visual Studio Code](https://github.com/microsoft/vscode)                                  |
 | **Fonts**                   | [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)                                      |
 
+## Preview
+
+| Desktop                               | VSCode                              |
+| ------------------------------------- | ----------------------------------- |
+| ![desktop.png](../assets/desktop.png) | ![vscode.png](../assets/vscode.png) |
+
 ## Wallpaper
 
 <p align="center">
