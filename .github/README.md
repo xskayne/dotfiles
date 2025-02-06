@@ -24,7 +24,7 @@ Nix allows for an easy to manage, collaborative, reproducible deployment. This m
 
 ## Components
 
-|                             | **NixOS (Wayland)**                                                                        |
+|                             | **NixOS (X11)**                                                                            |
 | --------------------------- | ------------------------------------------------------------------------------------------ |
 | **Window Manager**          | [i3](https://github.com/i3/i3)                                                             |
 | **Terminal Emulator**       | [Alacritty](https://github.com/alacritty/alacritty)                                        |
