@@ -153,6 +153,7 @@
     gnupg # gpg for encryption and signing
     xorg.xev # x11 event viewer
     alsa-utils # alsa sound utilities
+    nemo # file browser
   ];
 
   hardware = {
