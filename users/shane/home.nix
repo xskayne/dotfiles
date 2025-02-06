@@ -48,16 +48,33 @@
         composer # dependency manager for PHP
         nodejs # event-driven I/O framework for the V8 JavaScript engine
         pnpm # fast, disk space efficient package manager for JavaScript
+        papirus-folders
       ];
   };
 
   gtk = {
     enable = true;
 
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
+    };
+
     cursorTheme = {
       name = "catppuccin-mocha-light-cursors";
       package = pkgs.catppuccin-cursors.mochaLight;
       size = 24;
+    };
+
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "mauve";
+      size = "standard";
+      tweaks = [ "normal" ];
     };
   };
 
