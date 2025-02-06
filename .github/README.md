@@ -6,7 +6,7 @@
 
 <p align="center">
 	<a href="">
-		<img alt="" src="https://img.shields.io/github/stars/xskayne/dotfiles?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
+		<img alt="" src="https://img.shields.io/github/stars/xskayne/dotslash?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
 	</a>
 	<a href="">
 		<img alt="" src="https://img.shields.io/badge/NixOS-24.11-info?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" />
@@ -69,8 +69,8 @@ See [iso](../iso) for details.
 For NixOS, use the following command(s):
 
 ```bash
-git clone https://github.com/xskayne/dotfiles
-cd dotfiles
+git clone https://github.com/xskayne/dotslash
+cd dotslash
 nixos-rebuild switch --flake '.?submodules=1'#<host>
 ```
 
