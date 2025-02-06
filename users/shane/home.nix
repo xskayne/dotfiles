@@ -29,18 +29,26 @@
     };
 
     # define packages to be installed for the user
-    packages = with pkgs; [
-      nixfmt-rfc-style # nixfmt tool for formatting nix files according to RFC style
-      gcc # GNU Compiler Collection
-      rustup # Rust toolchain installer
-      signal-desktop # Signal desktop application (end-to-end encrypted messaging)
-      vesktop # Discord client
-      vlc # VLC media player
-      runelite # RuneScape client (old-school)
-      vscode # Visual Studio Code (code editor)
-      kmymoney # KMyMoney (personal finance manager)
-      nextcloud-client # Nextcloud client for syncing files and data
-    ];
+    packages =
+      with pkgs;
+      with php83Packages;
+      with nodePackages;
+      [
+        nixfmt-rfc-style # nixfmt tool for formatting nix files according to RFC style
+        gcc # GNU Compiler Collection
+        rustup # Rust toolchain installer
+        signal-desktop # Signal desktop application (end-to-end encrypted messaging)
+        vesktop # Discord client
+        vlc # VLC media player
+        runelite # RuneScape client (old-school)
+        vscode # Visual Studio Code (code editor)
+        kmymoney # KMyMoney (personal finance manager)
+        nextcloud-client # Nextcloud client for syncing files and data
+        laravel # laravel application installer
+        composer # dependency manager for PHP
+        nodejs # event-driven I/O framework for the V8 JavaScript engine
+        pnpm # fast, disk space efficient package manager for JavaScript
+      ];
   };
 
   gtk = {
