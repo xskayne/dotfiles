@@ -146,7 +146,7 @@ for_window [class=net-runelite-client-RuneLite] focus
 for_window [class=mpv] focus
 
 # automatically float desired windows:
-for_window [class=(?i)nemo] floating enable
+for_window [class=(?i)Nemo] floating enable
 
 #############################################
 # autostart applications/services on login: #
