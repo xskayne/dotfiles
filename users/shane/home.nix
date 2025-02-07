@@ -11,11 +11,20 @@
     ../../home/rofi # rofi (application launcher) configuration
   ];
 
-  # enable catppuccin theme for home-manager
-  catppuccin.enable = true;
+  catppuccin = {
+    # enable catppuccin theme for home-manager
+    enable = true;
 
-  # set the flavor of the catppuccin theme (mocha in this case)
-  catppuccin.flavor = "mocha";
+    # set the flavor of the catppuccin theme (mocha in this case)
+    flavor = "mocha";
+
+    gtk = {
+      flavor = "mocha";
+      accent = "mauve";
+      size = "standard";
+      tweaks = [ "normal" ];
+    };
+  };
 
   home = {
     # set cursor to mocha (light)
@@ -67,14 +76,6 @@
       name = "catppuccin-mocha-light-cursors";
       package = pkgs.catppuccin-cursors.mochaLight;
       size = 24;
-    };
-
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      accent = "mauve";
-      size = "standard";
-      tweaks = [ "normal" ];
     };
   };
 
