@@ -164,6 +164,11 @@
       # enable 32-bit graphics (if necessary for older hardware or specific software)
       enable32Bit = true;
     };
+
+    alsa = {
+      # enable alsa (advanced linux sound architecture) for sound
+      enable = true;
+    };
   };
 
   # enable real-time priority scheduling (useful for audio, video, and other high-priority tasks)
@@ -210,7 +215,7 @@
 
     pipewire = {
       # disable pipewire (alternative to pulseaudio for managing audio)
-      enable = true;
+      enable = false;
 
       alsa.enable = true; # enable alsa support with pipewire
       alsa.support32Bit = true; # enable 32-bit alsa support with pipewire
