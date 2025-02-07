@@ -17,6 +17,9 @@
           id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; # [UTIL]: "Dark Reader"
         }
         {
+          id = "edibdbjcniadpccecjdfdjjppcpchdlm"; # [UTIL]: "I (Still) Don't Care About Cookies"
+        }
+        {
           id = "bnjjngeaknajbdcgpfkgnonkmififhfo"; # [DEV]: "Fake Filler"
         }
         {
